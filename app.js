@@ -4,7 +4,7 @@ console.log('Valeriia Shadrina 01/06/20');
 console.log('För att borja programmet ange "Enter". För att avsluta programmet ange "Ctrl + C".');
 prompt('');
 
-// create array to store the result of every dice throw
+// creating array to store the result of every dice throw
 const resultArray = [];
 
 function throwDice() {
