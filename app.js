@@ -4,12 +4,13 @@
 // 		+ receive information
 // + generate random whole number between 1 and 6 for each dice, one at a time
 // + print numbers on screen and the sum and a number of total dice strokes
-// 		if any random number = 6
-// 			do not add that to sum
-//			 throw 2 more dices (generate random whole number between 1 and 6 for each dice)
+// 		+ if any random number = 6
+// 			+ do not add that to sum
+//			 + throw 2 more dices (generate random whole number between 1 and 6 for each dice)
 // 		+ indicate that on a screen
-// 		if again any random number = 6 - repeat
-// give option to start and end program
+// 		+ if again any random number = 6 - repeat
+// give option to start
+// 		and end program
 // + handle input errors
 
 // const prompt = require('prompt-sync')();
@@ -48,10 +49,11 @@ while (!enteredCorrectNumber) {
 				console.log(result);
 				if (result === 6) {
 					console.log(`One of results is equal to 6, throwing dice 2 more times.`);
-					let firstTime = throwDice();
-					console.log(firstTime);
-					let secondTime = throwDice();
-					console.log(secondTime);
+					throwDices(minThrow, 2);
+					// let firstTime = throwDice();
+					// console.log(firstTime);
+					// let secondTime = throwDice();
+					// console.log(secondTime);
 				} else {
 					resultArray.push(result);
 				}
