@@ -11,9 +11,11 @@ function throwDice() {
 }
 
 function arraySum(items) {
-	return items.reduce(function(accumulator, currentValue) {
-		return accumulator + currentValue;
-	}, 0);
+	let sum = 0;
+	for (let i = 0; i < items.length; i++) {
+		sum += items[i];
+	}
+	return sum;
 }
 
 // function that throws dices and saves results
