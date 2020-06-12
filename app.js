@@ -1,6 +1,6 @@
 const prompt = require('prompt-sync')({ sigint: true });
 
-console.log('To start the program press "Enter". To quit the program press "Ctrl + C".');
+console.log('To start the program press "Enter". To exit the program press "Ctrl + C".');
 prompt('');
 
 // creating array to store the result of every dice throw
@@ -43,27 +43,26 @@ while (!enteredCorrectNumber) {
 	const diceCount = Number(prompt(''));
 
 	// handling input errors
-	if (diceCount >= 1 && diceCount <= 5) {
-		enteredCorrectNumber = true;
-
-		// converting input to a number
-		let maxThrow = diceCount;
-
-		// min number of dices to throw
-		const minThrow = 1;
-
-		// calling function
-		throwDices(minThrow, maxThrow);
-
-		// counting sum of throws
-		let resultSum = arraySum(resultArray);
-
-		// counting how many dices were thrown
-		let numberOfDices = resultArray.length;
-
-		// printing sum of throws and how many dices were thrown
-		console.log(`The total sum is: ${resultSum}, number of throws: ${numberOfDices}.`);
-	} else {
-		console.log('Sorry, you entered the wrong number. Please try again.');
+	if (isNaN(diceCount) || diceCount < 1 || diceCount > 5) {
+		console.log('Sorry, the input is incorrect. Please try again.');
+		continue;
 	}
+
+	enteredCorrectNumber = true;
+
+	// converting input to a number
+	let maxThrow = diceCount;
+
+	// min number of dices to throw
+	const minThrow = 1;
+
+	throwDices(minThrow, maxThrow);
+
+	// counting sum of throws
+	let resultSum = arraySum(resultArray);
+
+	// how many dices were thrown
+	let numberOfDices = resultArray.length;
+
+	console.log(`The total sum is: ${resultSum}, number of throws: ${numberOfDices}.`);
 }
