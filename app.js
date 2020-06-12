@@ -1,7 +1,6 @@
 const prompt = require('prompt-sync')({ sigint: true });
 
-console.log('Valeriia Shadrina 01/06/20');
-console.log('För att borja programmet ange "Enter". För att avsluta programmet ange "Ctrl + C".');
+console.log('To start the program press "Enter". To quit the program press "Ctrl + C".');
 prompt('');
 
 // creating array to store the result of every dice throw
@@ -23,14 +22,12 @@ function throwDices(minThrow, maxThrow) {
 	for (let i = minThrow; i <= maxThrow; i++) {
 		let result = throwDice();
 		if (result === 6) {
-			console.log('Du har en 6! Kastar tärningar ytterligare två gånger.');
+			console.log('You got a 6! Throwing dice two more times.');
 			throwDices(minThrow, 2);
 		} else {
 			resultArray.push(result);
 			let currentSum = arraySum(resultArray);
-			console.log(
-				`Resultatet för en tärning är: ${result}, summan av slagna tärningar hittills är: ${currentSum}.`
-			);
+			console.log(`The result is: ${result}, the sum so far is: ${currentSum}.`);
 		}
 	}
 }
@@ -39,7 +36,7 @@ let enteredCorrectNumber = false;
 
 while (!enteredCorrectNumber) {
 	console.log(
-		'Hur många tärningar vill du kasta? Ange ett nummer från 1 till 5 (om du får en 6 kastas tärning ytterligare två gånger):'
+		'How many dices do you want to throw? Enter a number from 1 to 5 (if you get a 6 the dice will be thrown two more times):'
 	);
 	const diceCount = Number(prompt(''));
 
@@ -63,8 +60,8 @@ while (!enteredCorrectNumber) {
 		let numberOfDices = resultArray.length;
 
 		// printing sum of throws and how many dices were thrown
-		console.log(`Totalsumman är: ${resultSum}, antal tärningsslag är: ${numberOfDices}.`);
+		console.log(`The total sum is: ${resultSum}, number of throws: ${numberOfDices}.`);
 	} else {
-		console.log('Tyvärr, angav du fel nummer. Var god försök igen.');
+		console.log('Sorry, you entered the wrong number. Please try again.');
 	}
 }
