@@ -2,6 +2,8 @@
 
 ## About
 
+This project is a CLI application for Node.js. 
+
 The user is asked for a choice of how many dices to throw. 
 At least 1 and max 5 dices can be selected.
 
